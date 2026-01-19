@@ -1,0 +1,14 @@
+
+easyocr
+ffmpeg_python
+filterpy
+matplotlib
+numpy
+opencv_contrib_python
+opencv_python
+pandas
+scipy
+scikit-image
+streamlit
+ultralytics
+streamlit
