@@ -3,11 +3,16 @@ SentraAI Service Configuration
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Base paths
 BASE_DIR = Path(__file__).parent.parent
 MODELS_DIR = BASE_DIR / "models"
 SAMPLE_VIDEOS_DIR = BASE_DIR / "sample_videos"
+SERVICE_DIR = Path(__file__).parent
+
+# Load .env file
+load_dotenv(SERVICE_DIR / ".env")
 
 # Environment configuration
 class Settings:

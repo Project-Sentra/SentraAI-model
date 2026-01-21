@@ -153,8 +153,8 @@ CAMERA_MODE=simulated
 PARKING_API_URL=http://127.0.0.1:5000
 
 # Detection settings
-MIN_CONFIDENCE=0.6
-AUTO_ENTRY_EXIT=false
+MIN_CONFIDENCE=0.4
+AUTO_ENTRY_EXIT=true
 ```
 
 **Don't change anything yet** - these defaults enable simulated mode for testing!

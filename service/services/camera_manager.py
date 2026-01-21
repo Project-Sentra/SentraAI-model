@@ -214,9 +214,11 @@ class CameraManager:
 
             if not cap.isOpened():
                 camera.status = CameraStatus.ERROR
-                camera.error_message = "Failed to open video source"
+                camera.error_message = f"Failed to open video source: {camera.source}"
+                print(f"[CRITICAL] Failed to open video source: {camera.source}")
                 return
 
+            print(f"[INFO] Successfully opened video source: {camera.source}")
             camera.status = CameraStatus.RUNNING
             camera.error_message = None
             frame_count = 0
