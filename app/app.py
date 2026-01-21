@@ -13,7 +13,7 @@ st.title('Vehicle Detection and License Plate Recognition')
 
 
 with st.sidebar:
-    st.title('Plate Vision AI')
+    st.title('Sentra-AI')
     st.image('assets/logo.png', use_column_width=True) 
     st.info('⚠️ Due to very low processing power, the video processing may take a while. That is why it has not been able to process the video real-time. The video will be processed in the background and the results will be displayed here once the processing is complete.')
     st.info('Models were trained to identify following formats of license plates: \n')

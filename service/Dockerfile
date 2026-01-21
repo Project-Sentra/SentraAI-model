@@ -1,6 +1,6 @@
 # AI Service Dockerfile - Multi-stage build
 # Stage 1: Builder
-FROM python:3.11-slim as builder
+FROM python:3.11-slim AS builder
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ COPY requirements.txt .
 RUN pip wheel --no-cache-dir --no-deps --wheel-dir /app/wheels -r requirements.txt
 
 # Stage 2: Production
-FROM python:3.11-slim as production
+FROM python:3.11-slim AS production
 
 # Create non-root user
 RUN groupadd -r sentra && useradd -r -g sentra sentra
@@ -40,8 +40,8 @@ RUN pip install --no-cache /wheels/*
 # Copy application code
 COPY --chown=sentra:sentra . .
 
-# Copy model files (if they exist in parent directory)
-COPY --chown=sentra:sentra ../models ./models 2>/dev/null || true
+# Create models directory (models will be downloaded at runtime if needed)
+RUN mkdir -p ./models && chown sentra:sentra ./models
 
 # Switch to non-root user
 USER sentra
